@@ -7,17 +7,22 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>My Tasks</h1>
-    <button id="loadTaskBtn">Load tasks</button>
-    <ul id="taskList">sdsds</ul>
-
+    <div id="header-container">
+        <h1>My Tasks</h1>
+        <button id="loadTaskBtn">Load tasks</button>
+        <ul id="taskList"></ul>
     <form id="task-form">
         <input type="text" id="title" placeholder="Title of Task" required/>
         <input type="text" id="description" placeholder="Description" required/>
-        <input type="text" id="status" placeholder="Status" required/>
+        <select id="status" placeholder="Status" required>
+            <option>Pending</option>
+            <option>InProgress</option>
+            <option>Done</option>
+        </select>
         <input type="number" id="userId" placeholder="User Id" required/>
         <button type="submit">Save Task</button>
     </form>
+    </div>
     <script src="javascript/script.js"></script>
 </body>
 </html>
