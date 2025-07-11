@@ -7,21 +7,35 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div id="header-container">
-        <h1>My Tasks</h1>
-        <button id="loadTaskBtn">Load tasks</button>
-        <ul id="taskList"></ul>
-    <form id="task-form">
-        <input type="text" id="title" placeholder="Title of Task" required/>
-        <input type="text" id="description" placeholder="Description" required/>
-        <select id="status" placeholder="Status" required>
-            <option>Pending</option>
-            <option>InProgress</option>
-            <option>Done</option>
-        </select>
-        <input type="number" id="userId" placeholder="User Id" required/>
-        <button type="submit">Save Task</button>
-    </form>
+    <div id="main-container">
+        <div id="header-container">
+            <h1 id="register-title" >Register your tasks</h1>
+        <form id="task-form">
+            <div class = "form-row">
+                <input type="text" id="title" maxlength="35" placeholder="Title of Task" required/>
+                <select id="status" placeholder="Status" required>
+                    <option>Pending</option>
+                    <option>InProgress</option>
+                    <option>Done</option>
+                </select>    
+            </div>
+
+            <textarea id="description" rows="5" cols="50" maxlength="200" placeholder="Description"></textarea>
+            <div class="form-row-2">
+                
+                <input type="number" id="userId" placeholder="User Id" required/>
+                <button id="loadTaskBtn">Load tasks</button>
+                <button type="submit">Save Task</button>
+                
+            </div>
+        </form>
+        
+        </div>
+
+        <div id="task-container">
+            <h1>My Tasks</h1>
+            <ul id="taskList"></ul>
+        </div>
     </div>
     <script src="javascript/script.js"></script>
 </body>

@@ -10,9 +10,14 @@ button.addEventListener('click', () => {
         taskList.innerHTML ='';
         data.content.forEach(task => {
             const li = document.createElement('li');
-            li.textContent = `${task.title} - Description: ${task.description} (Status: ${task.status}) - User ID: ${task.userId}`;
+            li.textContent = `${task.title}- Status: ${task.status} - User ID: ${task.userId}`;
+            li.style.marginBlock = '5px';
 
-
+            const moreInfoBtn = document.createElement('button');
+            moreInfoBtn.textContent ='More info';
+            moreInfoBtn.style.marginRight = '10px';
+            moreInfoBtn.style.marginLeft = '10px';
+            
             const editBtn = document.createElement('button');
             editBtn.textContent ='Edit';
             editBtn.addEventListener('click', () => fillFormForEdit(task));
@@ -20,6 +25,31 @@ button.addEventListener('click', () => {
             const deleteBtn = document.createElement('button');
             deleteBtn.textContent ='Delete';
             deleteBtn.style.marginLeft = '10px';
+
+            moreInfoBtn.addEventListener('click', () => {
+                let description =li.querySelector('.task-description');
+                
+                if(description){
+                    description.remove();
+                    moreInfoBtn.textContent ='More info'
+                }
+
+                else {
+                    description = document.createElement('p');
+                    description.textContent = `Description: ${task.description}`;
+                    description.classList.add('task-description');
+                    description.style.marginTop ='5px';
+                    description.style.fontStyle ='italic';
+                    
+                    
+                    li.appendChild(description);
+                    moreInfoBtn.textContent = 'Less Info';
+                    
+
+                }
+                
+
+            })
 
             deleteBtn.addEventListener('click', async () =>{
                 const confirmDelete = confirm('Are you sure you want to delete this task?');
@@ -43,6 +73,8 @@ button.addEventListener('click', () => {
                     alert("Erro de conexão: " + err);
                 }
         });
+
+            li.appendChild(moreInfoBtn);
             li.appendChild(editBtn);
             li.appendChild(deleteBtn);
             taskList.appendChild(li);
@@ -109,6 +141,7 @@ function fillFormForEdit(task) {
     document.getElementById('title').value = task.title;
     document.getElementById('description').value = task.description;
     document.getElementById('status').value = task.status;
+    document.getElementById('userId').value = task.userId;
 
     editingTaskId = task.id;
 

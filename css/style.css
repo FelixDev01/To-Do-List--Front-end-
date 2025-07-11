@@ -2,24 +2,130 @@ body{
     background: linear-gradient(to left, rgb(76, 224, 224), rgb(115, 115, 241))
 }
 
+#main-container {
+  display: flex;
+  gap: 10px;
+  padding: 20px;
+  align-items: flex-start;
+}
+
 #header-container{
+    flex: 1;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f5f5f5;
+    border-radius: 20px
+}
+
+#task-container {
+    flex: 2;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f5f5f5;
+    border-radius: 20px
+}
+
+#title {
+  width: 100%;           
+  max-width: 330px;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+#userId {
+  width: 100%;           
+  max-width: 80px;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.form-row{
+    display: flex;
+    gap: 10px;
+}
+
+.form-row-2{
+    display: flex;
+    gap: 84px;
+}
+
+#loadTaskBtn{
+
+}
+
+#status {
+  width: 100%;           
+  max-width: 110px;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+#description {
+  width: 100%;
+  max-width: 450px;
+  height: 120px;  
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  resize: none;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+#header-container button {
+    padding: 4px;
+    font-size: 15px;
+}
+
+#taskList{
     display: flex;
     flex-direction: column;
-    align-items: center;
+}
+
+.task-description {
+  max-width: 400px;          
+  max-height: 120px;         
+  overflow-y: auto;           
+  white-space: pre-wrap;      
+  word-wrap: break-word;      
+  margin-top: 5px;
+  font-style: italic;
+  border: 1px solid #ccc;
+  padding: 5px;
+  border-radius: 3px;
+  background: #f9f9f9;
 }
 
 
+
 #task-form{
+    
     align-content: center;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    max-width: 300px;
+
 }
 
 #task-form input,
 #task-form select,
 #task-form button {
-    padding: 8px;
-    font-size: 16px;
+    padding: 4px;
+    font-size: 14px;
 }
+
